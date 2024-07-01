@@ -1,0 +1,30 @@
+; ELWANNO.MDF
+
+Module Name: Advertiser
+
+Developer: Elwynor Technologies
+
+UNCONDITIONAL
+INTERNAL
+
+Requires:
+Replaces:
+
+Install: ELWANNO
+
+Online user manual:
+
+DLLs: ELWANNO
+MSGs: ELWANNO
+
+Btrieve files:     2
+
+Cleanup:
+
+Event-1:
+Event-2:
+Event-3:
+Event-4:
+
+Add-On Utility:
+

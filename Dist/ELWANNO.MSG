@@ -1,0 +1,183 @@
+
+LEVEL3 {Elwynor Technologies: Advertiser}
+
+ This is the key level that a user must have to not see
+ the advertisements. For example, if you want only demo
+ users to see the ads, you would make the key NORMAL.
+
+PSTKEY {SUPER} S 15 Key to not see ads
+
+ This is the key that a user must have to be able to view
+ and edit advertisements.
+
+EDITKEY {SUPER} S 15 Key to edit ads
+
+
+LEVEL4 {Elwynor Technologies: Advertiser}
+
+
+ This is the number of seconds between each message
+ broadcast.
+
+PSTSEC {How many seconds between messages? 60} N 30 3600
+
+ Answer YES if you want users who see the message to also
+ have their computers "beep"; otherwise answer NO.
+
+DOBEEP {"Beep" users with message? YES} B
+
+ Answer YES if you want users who are in the Editor to
+ receive your message; otherwise, answer NO.
+
+EDITBUG {Send message to users in the Editor? NO} B
+
+ This is the name of the Editor module on your system. It
+ is used to determine when a user is in the Editor so we
+ can prevent that user from being bothered then.
+ Normally you should NOT change this unless you are running
+ an editor module with a different name from the default.
+
+EDTNAM {Editor} S 24 Name of Editor module
+
+ This is the global command string to type to view ads.
+
+VIEWSTG {/adlist} S 15 Command to view ads
+
+ This is the global command string to type to edit ads.
+
+EDITSTG {/adedit} S 15 Command to edit ads
+
+ This option determines the starting channel number on your
+ system to display ads for which the CHANNEL flag has been
+ set. This channel is included in the displays.
+
+FSTLINE {Line number to begin displaying ads? 0} H 0 FF
+
+ This option determines the ending channel number on your
+ system to display ads for which the CHANNEL flag has been
+ set. This channel is included in the checks.
+
+LSTLINE {Line number to stop displaying ads? FF} H 0 FF
+
+ This is the time you want call backs to start being
+ delayed at if you answered YES to option PRIME. You
+ enter the time in the format HH:MM:SS where HH = hours,
+ MM = minutes and SS = seconds. Remember to use a 24 hour
+ format when doing this; for example, 3:00 PM would be
+ 15:00:00.
+
+PRMSTR {20:00:00} S 8 Starting time of "prime time"
+
+ This is the time you want call backs to stop being
+ delayed at if you answered YES to option PRIME. You
+ enter the time in the format HH:MM:SS where HH = hours,
+ MM = minutes and SS = seconds. Remember to use a 24 hour
+ format when doing this; for example, 3:00 PM would be
+ 15:00:00.
+
+PRMEND {22:00:00} S 8 Ending time of "prime time"
+
+ Answer YES if you want a message place in the Audit Trail
+ when an ad is displayed; otherwise, answer NO.
+
+SHOWAUD {Tell when ad is displayed in Audit Trail? YES} B
+
+ Answer YES if you want a message placed in the text file
+ you specify in option FILNAM when an ad is displayed;
+ otherwise, answer NO.
+
+SHOWTEXT {Tell when ad is displayed in text file? YES} B
+
+ This is the path and file name of the text file to use to
+ tell when an ad has been displayed; for example:
+ C:\BBSV10\ELWANNO.TXT.
+ This is only done if you answer YES to option SHOWTEXT.
+
+FILNAM {C:\BBSV10\ELWANNO.TXT} S 50
+
+
+LEVEL6 {Elwynor Technologies: Advertiser}
+
+
+ This message is displayed at log-on to users who can view
+ and edit ads, giving help on how to do this.
+
+ADLOG {[0m
+[1m%s
+[32mCopyright (C) 2021 Elwynor Technologies. All rights reserved.
+Type [33m%s ? [32mor [33m%s ? [32mfor help on viewing or editing ads.
+} T Log on help message
+
+ This message informs the user that he does not have access
+ to the global command he just entered.
+
+SORRY {[0m
+[1;35mSorry, but you don't have access to this command.
+} T No access message
+
+ This is the help message for Advertiser.
+
+HELP {[0m
+[1;32mYou can get a listing of all ads currently in use as well as information
+about the ads by typing:
+[33m%s
+[32mTo insert a new ad into the listings, you need to enter the path and
+filename of the text file to display. You would do this as follows:
+[33m%s <path>
+[32mwhere [33m<path> [32mwould be [33mC:\WGSERV\AD1.TXT [32mfor example.
+To remove an existing ad from the listings, you would enter the same
+command. For example:
+[33m%s C:\WGSERV\AD1.TXT
+[32mwould remove this ad from the listings.
+} T Help message
+
+ This is the header for listing ad information when there
+ are ads to display.
+
+RECS {[0m
+[1;32mThe following ads are currently being listed.
+[34mNumber    [36mFile
+} T List header
+
+ This message is displayed when there are no ads to list.
+
+NORECS {[0m
+[1;32mThere are currently no ads to list.
+} T No ads message
+
+ This is the output of information for each ad.
+
+RECDAT {[0;1;34m%-10d[36m%s
+} T Information for ads
+
+ This is the header for displaying the flags that an
+ ad has.
+
+FLAGHDR {[0;1mFLAGS:
+} T Flag header message
+
+ This is the output for each flag that an ad has.
+
+FLAG {[0;1;33m%s } T Flag listing message
+
+ This message is displayed when a user removes an ad from
+ use.
+
+RECDEL {[0m
+[1;32mOk, the ad in [33m%s [32mhas been removed from usage.
+} T Ad removed message
+
+ This message is displayed when a user adds an ad to use.
+
+RECADD {[0m
+[1;32mOk, the ad in [33m%s [32mhas been added to usage.
+} T Ad added message
+
+ This message is displayed to a user who attempts to use a
+ DOS reserved name for an ad file.
+
+RSVNAM {[0m
+[1;35mSorry, but [33m%s [35mis a DOS reserved name and cannot be used for an ad's text
+file name.
+} T Name reserved message
+

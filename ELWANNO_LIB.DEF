@@ -1,0 +1,6 @@
+; Filename: ELWANNO_LIB.DEF
+LIBRARY ELWANNO.DLL
+; *** Visual Studio 2019 EXPORT ALIASES ONLY ***
+; Advertiser - Copyright (c) 2024 Elwynor Technologies
+EXPORTS
+    init__elwanno=_init__elwanno	@1
